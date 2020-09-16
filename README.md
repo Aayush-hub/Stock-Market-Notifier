@@ -3,7 +3,7 @@
 - It notifies when a stock goes bullish or bearish from the price user purchased it.
 ### Steps and uses-
 #### **It gives desktop notification to the user when a stock he/she purchased and it goes bullish or bearish in the USA markets.**
-- Enter the stock you purchased or want to purchase (in the comapny's stock symbol)
+- Enter the stock you purchased or want to purchase (in the company's stock symbol)
      
       Reference - https://www.nasdaq.com/market-activity/stocks/screener)
 - Enter the maximum price you want to sell to get notified.
