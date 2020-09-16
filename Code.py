@@ -48,6 +48,14 @@ if __name__ == "__main__":
         print(f"Day gainers are: {w}")
         y = get_day_losers()                                          #getting day losers
         print(f"Day losers are: {y}")
+        
+    ###Other features when markets are closed#####
+    
+        #get_earnings("Company's name")
+        #get_balance_sheet("Company's name")
+        #get_analysts_info("Company's name")
+        #get_income_statement("Company's name")
+        #get_data("Company's name")
     else:
         print("Hope you have a great trading......")                  #printing sweet messages
         print("Thank you for choosing us!!!")   
