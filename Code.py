@@ -15,39 +15,42 @@ if __name__ == "__main__":
     print(f"Dow Jones Industrial Average: $ {x}")
     print(f"Nasdaq: $ {y}")
     print("**********Welcome to the Markets***********")
+    def todayAt (hr, min=0, sec=0, micros=0):                          #converting time format into only hours.
+    
+        return tme.replace(hour=hr, minute=min, second=sec, microsecond=micros) 
+    while tme>todayAt(19) and tme<todayAt(1):                          #applying condition on opening and closing time of USA markets
     a1 = input('Enter company name you want to trade \n')              #getting company's name from user
     a = round(get_live_price(a1),2)                                    #getting real-time price of the company
     print(f"Current Stock price of {a1} is: $ {a}")                    #printing current price
     b = int(input("Enter maximum price to be notified: $ "))           #taking maximum price on which user want to sell shares.... to get notified
     c = int(input("Enter stop loss price to be notified: $ "))         #taking stop loss price on which user want to sell shares.... to get notified
-    while True:
-        q = get_live_price(a1)                                         #getting current price of entered company.
-        if q > b:
-            notification.notify (                                      #creating desktop notification bar for user to get notified if share price rise...
-                title = 'Stock Price has raised',
-                message = f"Price of {a1} is: $ {q}",
-                timeout = 30
-        )
-            get_live_price(a1)
-            break
-        elif q < c:
-            notification.notify (                                      #creating desktop notification bar for user to get notified if share price fall...
-                title = 'Stock Price has fallen',
-                message = f"Price of {a1} is: ${q}",
-                timeout = 30
-        )
-            get_live_price(a1)
-            break
+    q = get_live_price(a1)                                         #getting current price of entered company.
+    if q > b:
+        notification.notify (                                      #creating desktop notification bar for user to get notified if share price rise...
+            title = 'Stock Price has raised',
+            message = f"Price of {a1} is: $ {q}",
+            timeout = 1*60
+    )
+        get_live_price(a1)
+        break
+    elif q < c:
+        notification.notify (                                      #creating desktop notification bar for user to get notified if share price fall...
+            title = 'Stock Price has fallen',
+            message = f"Price of {a1} is: ${q}",
+            timeout = 1*60
+    )
+        get_live_price(a1)
+        break
    
    ###### printing top gainers and top losers of current or previous day when markets are closed#######
    
-    def todayAt (hr, min=0, sec=0, micros=0):                         #converting time format into only hours.
-        return tme.replace(hour=hr, minute=min, second=sec, microsecond=micros) 
     if tme>todayAt(1) and tme<todayAt(19):                            #condition of time - when markets are close
         w = get_day_gainers()                                         #getting day gainers
         print(f"Day gainers are: {w}")
         y = get_day_losers()                                          #getting day losers
         print(f"Day losers are: {y}")
+        print("*****Markets are currently closed*****")
+        print("Thank you for choosing us!!!")
         
     ###Other features when markets are closed#####
     
