@@ -4,6 +4,7 @@ from time import time , sleep                                                 #i
 from datetime import datetime                                          #in-built module
 from datetime import date                                              #in-built module
 from plyer import notification                                         #pip install plyer
+
 if __name__ == "__main__":
     
     dt = date.today()                                                  #taking current date
@@ -50,9 +51,9 @@ if __name__ == "__main__":
                     sleep(20)
                     continue
    
-   ###### printing top gainers and top losers of current or previous day when markets are closed#######
+   ##### printing top gainers and top losers of current or previous day when markets are closed ######
    
-    elif hours> 1 or hours< 19:                                       #condition of time - when markets are close
+    elif hours> 1 or hours=< 19:                                       #condition of time - when markets are close
         w = get_day_gainers()                                         #getting day gainers
         print(f"Day gainers are: {w}")
         y = get_day_losers()                                          #getting day losers
